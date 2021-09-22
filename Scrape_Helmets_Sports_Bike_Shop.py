@@ -6,6 +6,7 @@ import re
 import pandas as pd
 from datetime import date
 from selenium.webdriver.common.by import By
+import random
 
 # Declare global variables
 path = "C:\Program Files (x86)\chromedriver.exe"
@@ -62,13 +63,13 @@ product_list = []
 
 for page_num in range(1,50):
     if page_num == 1:
-        driver.implicitly_wait(5)
+        time.sleep(random.randint(5,12))
 
     else:
         site_url = "https://www.sportsbikeshop.co.uk/motorcycle_parts/content_search?s=helmets&p=" + str(page_num)
         driver.get(site_url)
         soup = BeautifulSoup(driver.page_source, "html.parser")
-        driver.implicitly_wait(5)
+        time.sleep(random.randint(5,12))
 
     #print(site_url)
 
