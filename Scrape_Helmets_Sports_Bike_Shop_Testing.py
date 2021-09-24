@@ -58,7 +58,7 @@ page_num = 1
 product_list = []
 
 # REMEBER TO CHANGE BACK TO PAGE 50
-for page_num in range(1,50):
+for page_num in range(1,5):
     if page_num == 1:
         time.sleep(random.randint(5,12))
 
@@ -78,11 +78,12 @@ for page_num in range(1,50):
 
         i = 0
         prod_brand = "No Match"
-        for i in range(len(list_of_brands)):
-            brand_name = list_of_brands[i].strip()
-            if brand_name.lower() in prod_title.lower():
-                print('BRAND NAME:', brand_name, ' - DESCRIPTION:', prod_title)
-                prod_brand = brand_name.strip()
+        while prod_brand == "No Match":
+            for i in range(len(list_of_brands)):
+                brand_name = list_of_brands[i].strip()
+                if brand_name.lower() in prod_title.lower():
+                    print('BRAND NAME:', brand_name, ' - DESCRIPTION:', prod_title)
+                    prod_brand = brand_name.strip()
 
         prod_cost = str(item_list[x].find(class_="product-price").text)
         prod_cost_mod = prod_cost[2:]
