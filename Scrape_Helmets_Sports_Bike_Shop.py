@@ -66,7 +66,7 @@ for page_num in range(1,50):
         site_url = "https://www.sportsbikeshop.co.uk/motorcycle_parts/content_search?s=helmets&p=" + str(page_num)
         driver.get(site_url)
         soup = BeautifulSoup(driver.page_source, "html.parser")
-        time.sleep(random.randint(5,12))
+        time.sleep(random.randint(8,12))
 
     #print(site_url)
 
